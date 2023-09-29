@@ -1,1 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    float balance = 100000;  // Initial balance
+    float interestRate = 0.12;  // 12% annual interest rate
+
+    // Calculate monthly interest rate
+    float monthlyInterestRate = interestRate / 12;
+
+    // Withdrawal in the 5th month
+    balance -= 25000;
+
+    // Deposit in the 9th month
+    balance += 10000;
+
+    // Calculate balance at the end of the year (12 months)
+    for (int month = 1; month <= 12; month++) {
+        balance += balance * monthlyInterestRate;  // Add monthly interest
+    }
+
+    // Print the final balance
+    printf("Swajith's balance at the end of the year: %.2f\n", balance);
+
+    return 0;
+}
 
