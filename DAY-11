@@ -1,0 +1,37 @@
+online session:-
+
+def TOH(n, src, aux, dest):
+    if n <= 1:
+        print(src + " -> " + dest)
+        return
+    TOH(n-1, 'src', 'dest', 'aux')
+    print(src + " -> " + dest)
+    TOH(n-1, 'aux', 'src', 'dest')
+n = 4
+TOH(n, 'src', 'aux', 'dest')
+
+output:-
+
+
+def count(n):
+    if n == 1:
+        return 1 
+    return 2*count(n-1)+1
+    
+    
+ans = count(3)
+print(ans)
+print((2**n) - 1)
+
+output:-7
+
+
+magic square matrix:-
+condition:-
+1) (i) calculate the position as (n/2, n-1) = (x,y)
+  (ii) calculate the further position values as (x-1, y+1) => (i,j)
+2) either i or j, go out of the range (0,1,...n-1) then wrap around
+   (if i is less than 0, make i= n-1)
+    (if j is greater than n-1, make j=0)
+3) if i and j both go out of the range( eg: i<0 and j>n-1)
+   then (i, j) => (0, n-2)
